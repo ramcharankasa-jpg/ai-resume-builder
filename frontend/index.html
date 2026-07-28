@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Resume Builder | UpLinkAI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>AI Resume Builder</h1>
+    <div id="authArea">
+      <span id="userEmail" class="hidden"></span>
+      <button id="loginBtn">Sign In with Google</button>
+      <button id="logoutBtn" class="hidden">Log Out</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="form-panel">
+      <h2>Your Details</h2>
+
+      <label>Full Name</label>
+      <input type="text" id="fullName" placeholder="Jane Doe" />
+
+      <label>Email</label>
+      <input type="email" id="email" placeholder="jane@example.com" />
+
+      <label>Phone</label>
+      <input type="text" id="phone" placeholder="+91 90000 00000" />
+
+      <label>Professional Summary</label>
+      <textarea id="summary" rows="3" placeholder="Short summary about yourself"></textarea>
+      <button class="ai-btn" data-target="summary" data-type="summary">✨ Improve with AI</button>
+
+      <label>Skills (comma separated)</label>
+      <input type="text" id="skills" placeholder="JavaScript, React, SQL" />
+
+      <label>Work Experience</label>
+      <textarea id="experience" rows="4" placeholder="Role, Company, Dates, Description"></textarea>
+      <button class="ai-btn" data-target="experience" data-type="experience">✨ Improve with AI</button>
+
+      <label>Education</label>
+      <textarea id="education" rows="3" placeholder="Degree, Institution, Year"></textarea>
+
+      <label>Profile Photo (optional)</label>
+      <input type="file" id="photoUpload" accept="image/*" />
+
+      <div class="btn-row">
+        <button id="saveBtn">💾 Save to Firestore</button>
+        <button id="downloadBtn">⬇️ Download PDF</button>
+      </div>
+      <p id="statusMsg"></p>
+    </section>
+
+    <section class="preview-panel">
+      <h2>Live Preview</h2>
+      <div id="resumePreview" class="resume-card">
+        <img id="previewPhoto" class="hidden" />
+        <h3 id="pName">Your Name</h3>
+        <p id="pContact"></p>
+        <h4>Summary</h4>
+        <p id="pSummary"></p>
+        <h4>Skills</h4>
+        <p id="pSkills"></p>
+        <h4>Experience</h4>
+        <p id="pExperience"></p>
+        <h4>Education</h4>
+        <p id="pEducation"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Firebase SDKs -->
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <!-- PDF export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>

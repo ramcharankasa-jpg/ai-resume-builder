@@ -1,0 +1,109 @@
+:root {
+  --primary: #4f46e5;
+  --bg: #f8f9fc;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: var(--primary);
+  color: white;
+}
+
+.topbar h1 { font-size: 1.3rem; margin: 0; }
+
+.topbar button {
+  background: white;
+  color: var(--primary);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.container {
+  display: flex;
+  gap: 24px;
+  padding: 24px 32px;
+  flex-wrap: wrap;
+}
+
+.form-panel, .preview-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+  min-width: 320px;
+}
+
+label { display: block; margin-top: 12px; font-weight: 600; font-size: 0.9rem; }
+
+input, textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-top: 4px;
+  font-family: inherit;
+}
+
+.ai-btn {
+  margin-top: 6px;
+  background: #eef2ff;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-row { margin-top: 20px; display: flex; gap: 10px; }
+
+#saveBtn, #downloadBtn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#statusMsg { margin-top: 10px; font-size: 0.85rem; color: #16a34a; }
+
+.resume-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.resume-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.resume-card h3 { margin: 0 0 4px 0; }
+.resume-card h4 { margin-bottom: 4px; color: var(--primary); }
+
+.hidden { display: none; }
